@@ -3,6 +3,7 @@ import { Link } from "react-router"
 // Local imports
 import { Icons } from "../icons"
 import { siteConfig } from "@/config/site"
+import NewsLetter from "../news-letter"
 
 const Footer = () => {
   return (
@@ -36,6 +37,10 @@ const Footer = () => {
                 </ul>
               </div>
             ))}
+          </section>
+          <section>
+            <h4 className="mb-3 font-medium">Subscribe to our Newsletter</h4>
+            <NewsLetter />
           </section>
         </section>
       </div>

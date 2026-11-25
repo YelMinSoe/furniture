@@ -1,4 +1,5 @@
 // Local imports
+import Footer from "@/components/layouts/Footer"
 import Header from "@/components/layouts/Header"
 import { Button } from "@/components/ui/button"
 import {
@@ -30,6 +31,7 @@ const Error = () => {
           </CardFooter>
         </Card>
       </main>
+      <Footer />
     </div>
   )
 }
