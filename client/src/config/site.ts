@@ -28,6 +28,11 @@ export const siteConfig = {
           href: "/products?categories=3",
           description: "Buy our latest metal furniture.",
         },
+        {
+          title: "Metal",
+          href: "/products?categories=3",
+          description: "Buy our latest metal furniture.",
+        },
       ],
       menu: [
         {

@@ -11,13 +11,10 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import {
-  CircleAlertIcon,
-  CircleCheckIcon,
-  CircleDashedIcon,
-} from "lucide-react"
+import {} from "lucide-react"
 import type { MainNavItem } from "@/types/type"
 import { Icons } from "../icons"
+import { siteConfig } from "@/config/site"
 
 // Types
 interface mainNavigationProps {
@@ -29,7 +26,7 @@ const MainNavigation = ({ items }: mainNavigationProps) => {
     <div className="hidden lg:flex">
       <Link to="/" className="flex items-center space-x-2">
         <Icons.logo className="size-7" aria-hidden="true" />
-        <span className="font-bold">Furniture Shop</span>
+        <span className="font-bold">{siteConfig.name}</span>
         <span className="sr-only">Home</span>
       </Link>
       <NavigationMenu>
