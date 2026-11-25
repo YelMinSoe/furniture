@@ -31,3 +31,5 @@ coverage/
 
 # Vite cache
 .vite/
+
+notes.txt
