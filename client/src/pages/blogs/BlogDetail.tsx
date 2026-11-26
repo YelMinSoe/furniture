@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router"
 import { posts } from "@/data/posts"
 import { Icons } from "@/components/icons"
 import { Button } from "@/components/ui/button"
+import RichTextRenderer from "@/components/blogs/RichTextRenderer"
 
 const BlogDetail = () => {
   const { postId } = useParams()
@@ -28,13 +29,14 @@ const BlogDetail = () => {
                   <span className="font-semibold">{post.updated_at}</span>
                 </span>
               </div>
-              <h3 className="text-base font-normal">{post.content}</h3>
+              <h3 className="my-6 text-base font-normal">{post.content}</h3>
               <img
                 src={post.image}
                 alt="Post image"
                 className="w-full rounded-xl"
               />
-              <p className="">{post.body}</p>
+              {/* <p className="">{post.body}</p> */}
+              <RichTextRenderer content={post.body} className="my-8" />
               <div className="mb-12 space-x-2">
                 {post.tags.map((tag) => (
                   <Button variant="secondary">{tag}</Button>
