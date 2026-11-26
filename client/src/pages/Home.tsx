@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/static-components */
 // Library imports
 import { Link } from "react-router"
 
@@ -8,6 +9,23 @@ import CarouselCard from "@/components/products/CarouselCard"
 import { products } from "@/data/products"
 
 const Home = () => {
+  // Component for Titles
+  const Title = ({
+    title,
+    href,
+    sideText,
+  }: {
+    title: string
+    href: string
+    sideText: string
+  }) => (
+    <div className="mt-28 mb-10 flex flex-col px-4 md:flex-row md:justify-between lg:px-0">
+      <h2 className="mb-4 text-2xl font-bold md:mb-0">{title}</h2>
+      <Link to={href} className="font-semibold text-muted-foreground underline">
+        {sideText}
+      </Link>
+    </div>
+  )
   return (
     <div className="container mx-auto">
       <div className="flex flex-col lg:flex-row lg:justify-between">
@@ -40,6 +58,7 @@ const Home = () => {
         <img src={Couch} alt="Couch-image" className="w-full lg:w-3/5" />
       </div>
       <CarouselCard products={products} />
+      <Title title="Recent Blogs" href="/blogs" sideText="View All Posts" />
     </div>
   )
 }
