@@ -1,5 +1,6 @@
 import {
   Home,
+  Layers,
   ListSortAscending,
   LoaderCircle,
   MoveLeft,
@@ -18,4 +19,5 @@ export const Icons = {
   // questionMark: QuestionMark,
   exclamationMark: TriangleExclamationPoint,
   back: MoveLeft,
+  layers: Layers,
 }

@@ -38,8 +38,10 @@ const BlogDetail = () => {
               {/* <p className="">{post.body}</p> */}
               <RichTextRenderer content={post.body} className="my-8" />
               <div className="mb-12 space-x-2">
-                {post.tags.map((tag) => (
-                  <Button variant="secondary">{tag}</Button>
+                {post.tags.map((tag, i) => (
+                  <Button variant="secondary" key={i}>
+                    {tag}
+                  </Button>
                 ))}
               </div>
             </>
@@ -49,7 +51,27 @@ const BlogDetail = () => {
             </p>
           )}
         </section>
-        <section className="w-full lg:mt-24 lg:w-1/4">Other</section>
+        <section className="w-full lg:mt-24 lg:w-1/4">
+          <div className="mb-8 flex items-center gap-2 text-base font-bold">
+            <Icons.layers className="size-7" />
+            <h3 className="">Other Blog Posts</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1">
+            {posts.map((post) => (
+              <Link
+                to={`/blogs/${post?.id}`}
+                className="mb-6 flex items-start gap-2"
+                key={post.id}
+              >
+                <img src={post?.image} alt="Blog post" className="w-1/4" />
+                <div className="w-3/4 text-sm font-medium text-muted-foreground">
+                  <p className="line-clamp-2">{post?.content}</p>
+                  <i className="">... see more</i>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
       </section>
     </div>
   )
