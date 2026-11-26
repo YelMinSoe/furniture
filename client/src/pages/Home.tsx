@@ -7,7 +7,10 @@ import { Button } from "@/components/ui/button"
 import Couch from "@/data/images/couch.png"
 import CarouselCard from "@/components/products/CarouselCard"
 import { products } from "@/data/products"
+import { posts } from "@/data/posts"
+import BlogCard from "@/components/blogs/BlogCard"
 
+// const samplePosts = posts.slice(0, 3)
 const Home = () => {
   // Component for Titles
   const Title = ({
@@ -59,6 +62,8 @@ const Home = () => {
       </div>
       <CarouselCard products={products} />
       <Title title="Recent Blogs" href="/blogs" sideText="View All Posts" />
+      {/* why slice? we want target posts. Don't show all posts . show it like sample posts  */}
+      <BlogCard posts={posts.slice(0, 3)} />
     </div>
   )
 }

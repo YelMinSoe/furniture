@@ -51,10 +51,11 @@ const MainNavigation = ({ items }: mainNavigationProps) => {
               </NavigationMenuItem>
               {items[0].menu &&
                 items[0].menu.map((item) => (
-                  <NavigationMenuItem>
+                  <NavigationMenuItem key={item.title}>
                     <Link
                       to={String(item.href)}
                       className={navigationMenuTriggerStyle()}
+                      key={item.title}
                     >
                       {item.title}
                     </Link>
