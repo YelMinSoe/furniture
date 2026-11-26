@@ -1,4 +1,5 @@
 // Library imports
+import { useEffect, useState } from "react"
 
 // Local imports
 import {
@@ -27,6 +28,22 @@ interface mainNavigationProps {
 }
 
 const MobileNavigation = ({ items }: mainNavigationProps) => {
+  const [isDesktop, setIsDesktop] = useState(false)
+
+  // Prevent the sheet is shown from being affected when suddenly switching from phone to laptop
+  const query = "(min-width : 1024px)"
+  useEffect(() => {
+    const onChange = (even: MediaQueryListEvent) => {
+      setIsDesktop(even.matches)
+    }
+    const result = matchMedia(query)
+    result.addEventListener("change", onChange)
+    return () => result.removeEventListener("change", onChange)
+  }, [query])
+  if (isDesktop) {
+    return null
+  }
+  // done in here
   return (
     <div className="lg:hidden">
       <Sheet>
