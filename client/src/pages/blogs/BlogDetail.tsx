@@ -12,8 +12,8 @@ const BlogDetail = () => {
   return (
     <div className="container mx-auto px-4 lg:px-0">
       <section className="flex flex-col lg:flex-row">
-        <section className="">
-          <Button variant="outline" asChild>
+        <section className="w-full lg:w-3/4 lg:pr-16">
+          <Button variant="outline" asChild className="mt-8 mb-6">
             <Link to="/blogs">
               <Icons.back className="size-6" />
               All Posts
@@ -21,12 +21,25 @@ const BlogDetail = () => {
           </Button>
           {post ? (
             <>
-              <h2 className=""></h2>
-              <div className="">
-                <span className=""></span>
+              <h2 className="mb-3 text-3xl font-extrabold">{post.title}</h2>
+              <div className="text-sm">
+                <span>
+                  By <span className="font-semibold">{post.author}</span> on{" "}
+                  <span className="font-semibold">{post.updated_at}</span>
+                </span>
               </div>
-              <h3 className=""></h3>
-              <img src="" alt="" className="" />
+              <h3 className="text-base font-normal">{post.content}</h3>
+              <img
+                src={post.image}
+                alt="Post image"
+                className="w-full rounded-xl"
+              />
+              <p className="">{post.body}</p>
+              <div className="mb-12 space-x-2">
+                {post.tags.map((tag) => (
+                  <Button variant="secondary">{tag}</Button>
+                ))}
+              </div>
             </>
           ) : (
             <p className="mt-8 mb-16 text-center text-xl font-bold text-muted-foreground lg:mt-24">
@@ -34,7 +47,7 @@ const BlogDetail = () => {
             </p>
           )}
         </section>
-        <section className="">Other</section>
+        <section className="w-full lg:mt-24 lg:w-1/4">Other</section>
       </section>
     </div>
   )
