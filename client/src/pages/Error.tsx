@@ -1,3 +1,5 @@
+// Library imports
+import { Link } from "react-router"
 // Local imports
 import Footer from "@/components/layouts/Footer"
 import Header from "@/components/layouts/Header"
@@ -9,7 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Link } from "react-router"
+import { Icons } from "@/components/icons"
 
 const Error = () => {
   return (
@@ -17,11 +19,15 @@ const Error = () => {
       <Header />
       <main className="mx-auto flex flex-1 items-center">
         <Card className="w-87.5 md:w-125 lg:w-125">
-          <CardHeader>
-            <CardTitle className="text-center">Oops</CardTitle>
-            <CardDescription className="text-center">
-              An error accours accidently
-            </CardDescription>
+          <CardHeader className="flex flex-col items-center justify-center">
+            <div className="mt-2 mb-4 grid size-24 place-items-center rounded-full border border-dashed border-muted-foreground">
+              <Icons.exclamationMark
+                className="size-13 text-muted-foreground/70"
+                aria-hidden="true"
+              />
+            </div>
+            <CardTitle>Oops</CardTitle>
+            <CardDescription>An error accours accidently</CardDescription>
           </CardHeader>
 
           <CardFooter className="flex justify-center">

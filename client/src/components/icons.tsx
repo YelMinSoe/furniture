@@ -2,8 +2,10 @@ import {
   Home,
   ListSortAscending,
   LoaderCircle,
+  // QuestionMark,
   SendHorizonal,
   Store,
+  TriangleExclamationPoint,
 } from "lucide-react"
 
 export const Icons = {
@@ -12,4 +14,6 @@ export const Icons = {
   menu: ListSortAscending,
   send: SendHorizonal,
   loader: LoaderCircle,
+  // questionMark: QuestionMark,
+  exclamationMark: TriangleExclamationPoint,
 }
