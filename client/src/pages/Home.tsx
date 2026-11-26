@@ -9,6 +9,7 @@ import CarouselCard from "@/components/products/CarouselCard"
 import { products } from "@/data/products"
 import { posts } from "@/data/posts"
 import BlogCard from "@/components/blogs/BlogCard"
+import ProductCard from "@/components/products/ProductCard"
 
 // const samplePosts = posts.slice(0, 3)
 const Home = () => {
@@ -61,6 +62,17 @@ const Home = () => {
         <img src={Couch} alt="Couch-image" className="w-full lg:w-3/5" />
       </div>
       <CarouselCard products={products} />
+      <Title
+        title="Featured Products"
+        href="/products"
+        sideText="View All Products"
+      />
+      <div className="grid grid-cols-1 gap-4 px-4 md:grid-cols-2 md:px-0 lg:grid-cols-4">
+        {products.slice(0, 4).map((product) => (
+          <ProductCard product={product} key={product.id} />
+        ))}
+      </div>
+
       <Title title="Recent Blogs" href="/blogs" sideText="View All Posts" />
       {/* why slice? we want target posts. Don't show all posts . show it like sample posts  */}
       <BlogCard posts={posts.slice(0, 3)} />

@@ -4,6 +4,7 @@ import {
   ListSortAscending,
   LoaderCircle,
   MoveLeft,
+  Plus,
   // QuestionMark,
   SendHorizonal,
   Store,
@@ -20,4 +21,5 @@ export const Icons = {
   exclamationMark: TriangleExclamationPoint,
   back: MoveLeft,
   layers: Layers,
+  addToCart: Plus,
 }
