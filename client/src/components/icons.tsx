@@ -2,6 +2,7 @@ import {
   Home,
   ListSortAscending,
   LoaderCircle,
+  MoveLeft,
   // QuestionMark,
   SendHorizonal,
   Store,
@@ -16,4 +17,5 @@ export const Icons = {
   loader: LoaderCircle,
   // questionMark: QuestionMark,
   exclamationMark: TriangleExclamationPoint,
+  back: MoveLeft,
 }
