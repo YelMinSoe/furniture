@@ -12,6 +12,13 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
 import { Separator } from "@/components/ui/separator"
 import { formatPrice } from "@/lib/utils"
 import Rating from "@/components/products/Rating"
@@ -74,6 +81,20 @@ const ProductDetail = () => {
             />
           </div>
           <AddToCardForm canBuy={product?.status === "active" ? true : false} />
+          <Separator className="my-5" />
+          <Accordion
+            type="multiple"
+            defaultValue={["shipping"]}
+            className="max-w-lg"
+          >
+            <AccordionItem value="shipping" className="border-none">
+              <AccordionTrigger>Description</AccordionTrigger>
+              <AccordionContent>
+                {product?.description ??
+                  "No description is available for this product"}
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
       <section className="space-y-6 overflow-hidden">
