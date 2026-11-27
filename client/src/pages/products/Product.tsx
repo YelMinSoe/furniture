@@ -20,6 +20,7 @@ const Product = () => {
               <ProductCard product={product} key={product.id} />
             ))}
           </div>
+          <Pagination />
         </section>
       </section>
     </div>

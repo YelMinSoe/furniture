@@ -45,7 +45,7 @@ const ProductFilter = ({ filterList }: FilterProps) => {
             <input
               type="checkbox"
               value={String(category.id)}
-              className="mr-4"
+              className="mr-4 cursor-pointer"
               {...register("categories")}
             />
             {category.label}
@@ -65,7 +65,7 @@ const ProductFilter = ({ filterList }: FilterProps) => {
             <input
               type="checkbox"
               value={String(type.id)}
-              className="mr-4"
+              className="mr-4 cursor-pointer"
               {...register("types")}
             />
             {type.label}
