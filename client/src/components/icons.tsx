@@ -4,6 +4,7 @@ import {
   Layers,
   ListSortAscending,
   LoaderCircle,
+  Minus,
   MoveLeft,
   Plus,
   SendHorizonal,
@@ -24,4 +25,6 @@ export const Icons = {
   addToCart: Plus,
   star: Star,
   favorite: Heart,
+  plus: Plus,
+  minus: Minus,
 }

@@ -16,6 +16,7 @@ import { Separator } from "@/components/ui/separator"
 import { formatPrice } from "@/lib/utils"
 import Rating from "@/components/products/Rating"
 import AddToFavorite from "@/components/products/AddToFavorite"
+import AddToCardForm from "@/components/products/AddToCardForm"
 
 const ProductDetail = () => {
   const { productId } = useParams()
@@ -72,6 +73,7 @@ const ProductDetail = () => {
               rating={Number(product?.rating)}
             />
           </div>
+          <AddToCardForm canBuy={product?.status === "active" ? true : false} />
         </div>
       </section>
       <section className="space-y-6 overflow-hidden">
