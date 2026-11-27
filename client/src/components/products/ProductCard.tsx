@@ -14,15 +14,20 @@ import {
 } from "@/components/ui/card"
 import { AspectRatio } from "../ui/aspect-ratio"
 import { Button } from "../ui/button"
-import { formatPrice } from "@/lib/utils"
+import { cn, formatPrice } from "@/lib/utils"
 
 // types
-interface ProductProps {
+interface ProductProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
   product: Product
 }
-const ProductCard = ({ product }: ProductProps) => {
+const ProductCard = ({ product, className }: ProductProps) => {
   return (
-    <Card className="size-full overflow-hidden rounded-lg shadow-md">
+    <Card
+      className={cn(
+        "size-full overflow-hidden rounded-lg shadow-md",
+        className
+      )}
+    >
       <Link to={`/products/${product.id}`} aria-label={product.name}>
         <CardHeader className="border-b p-0">
           <AspectRatio ratio={1 / 1} className="bg-muted">
